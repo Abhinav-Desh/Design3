@@ -118,3 +118,30 @@
   border:1px solid rgb(211, 211, 211);
 }
 
+.customer-header{
+  font-size: 20px;
+  font-weight: 500;
+
+}
+
+.cards{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.dots{
+  width: 60px;
+  position: absolute;
+  height: 10px;
+  display: flex;
+  left: 50%;
+  bottom:0%;
+  justify-content: space-between;
+}
+.dot1,.dot2,.dot3{
+  border: 1px solid gray;
+  border-radius: 100%;
+  width: 8px;
+  height: 80%;
+}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const TestDetails = () => {
-  // Accordion data
+  
   const Accordian = [
     {
       AccordianTitle: 'Count of RBC',
@@ -36,7 +36,7 @@ const TestDetails = () => {
   const toggleAccordion = (index) => {
     setActiveAccordion(activeAccordion === index ? null : index);
   };
-
+ 
   return (
     <div className="TestDetails-container">
       <div className="Test-text" style={{ fontSize: '24px', marginTop: '15px', marginLeft: '15px', marginBottom: '15px' }}>
@@ -46,6 +46,7 @@ const TestDetails = () => {
       <div className="testHeading" style={{ backgroundColor: '#00cccc', color: 'white', height: '40px', display: 'flex', alignItems: 'center' }}>
         <div style={{ fontSize: '20px', fontWeight: '500', width: '40%', paddingLeft: '20px' }}>profile/parameter</div>
         <div style={{ fontSize: '20px', fontWeight: '500', width: '60%' }}>No. of Parameter</div>
+
       </div>
 
       <div className="details" style={{ marginTop: '10px', display: 'flex', flexDirection: 'column' }}>
@@ -63,14 +64,18 @@ const TestDetails = () => {
                 borderRadius: '5px',
                 margin: '10px auto',
                 cursor: 'pointer',
+                justifyContent:'space-around',
                 backgroundColor: activeAccordion === index ? '#f0f8ff' : 'transparent' 
               }}
             >
               <div style={{ fontSize: '20px', fontWeight: '500', width: '40%', paddingLeft: '15px' }}>
                 {ele.AccordianTitle}
               </div>
-              <div className="parameter-1" style={{ fontSize: '20px', fontWeight: '500', width: '60%', paddingLeft: '35px' }}>
+              <div className="parameter-1" style={{ fontSize: '20px', fontWeight: '500', width: '40%', paddingLeft: '35px' }}>
                 {ele.No_of_parameter}
+              </div>
+              <div className="sign"   style={{fontSize:'30px',fontWeight:'500',width:'20%',paddingLeft:'20px' }}>
+                {index === activeAccordion ? '-' : '+'}
               </div>
             </div>
 
