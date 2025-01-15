@@ -4,11 +4,7 @@ import { useState, useEffect } from "react";
 const CustomerReview = () => {
   const cards = [
     [
-      {
-        content:
-          "This is very good site healthians named give you good quality of testing of blood and it also depends good hygiene. I will definitely recommend everyone to join this revolution ",
-        name: "Suraj",
-      },
+      
       {
         content:
           "This is very good site healthians named give you good quality of testing of blood and it also depends good hygiene. I will definitely recommend everyone to join this revolution ",
@@ -41,11 +37,6 @@ const CustomerReview = () => {
           "This is very good site healthians named give you good quality of testing of blood and it also depends good hygiene. I will definitely recommend everyone to join this revolution ",
         name: "Random",
       },
-      {
-        content:
-          "This is very good site healthians named give you good quality of testing of blood and it also depends good hygiene. I will definitely recommend everyone to join this revolution ",
-        name: "Random1",
-      },
     ],
     [
       {
@@ -63,19 +54,38 @@ const CustomerReview = () => {
           "This is very good site healthians named give you good quality of testing of blood and it also depends good hygiene. I will definitely recommend everyone to join this revolution ",
         name: "Random4",
       },
-      {
-        content:
+      
+    ],
+      [
+        {
+            content:
+              "This is very good site healthians named give you good quality of testing of blood and it also depends good hygiene. I will definitely recommend everyone to join this revolution ",
+            name: "Random1",
+          },
+          {
+          content:
           "This is very good site healthians named give you good quality of testing of blood and it also depends good hygiene. I will definitely recommend everyone to join this revolution ",
         name: "Random5",
       },
-    ],
+      {
+      content:
+      "This is very good site healthians named give you good quality of testing of blood and it also depends good hygiene. I will definitely recommend everyone to join this revolution ",
+    name: "Random1",
+  },
+      
+    ]
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const interval = setTimeout(() => {
-      setCurrentIndex((prevIndex) => (prevIndex === 2 ? 0 : prevIndex + 1));
+        
+      if (currentIndex === 3){
+        setCurrentIndex(0);
+      }else{
+        setCurrentIndex(currentIndex+1)
+      }
     }, 3000);
 
     return () => clearTimeout(interval);
@@ -93,6 +103,7 @@ const CustomerReview = () => {
         border: "1px solid rgb(211, 211, 211)",
         padding: "10px",
         borderRadius: "10px",
+
       }}
     >
       <div
@@ -111,8 +122,7 @@ const CustomerReview = () => {
         <div
           className="cards"
           style={{
-            display: "flex",
-            
+            display: "flex",  
             overflowX: "auto",
             scrollbarWidth: "none",
           }}

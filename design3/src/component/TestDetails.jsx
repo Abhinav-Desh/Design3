@@ -74,17 +74,33 @@ const TestDetails = () => {
               <div className="parameter-1" style={{ fontSize: '20px', fontWeight: '500', width: '40%', paddingLeft: '35px' }}>
                 {ele.No_of_parameter}
               </div>
-              <div className="sign"   style={{fontSize:'30px',fontWeight:'500',width:'20%',paddingLeft:'20px' }}>
+              <div className="sign" style={{fontSize:'30px',fontWeight:'500',width:'20%',paddingLeft:'20px' }}>
                 {index === activeAccordion ? '-' : '+'}
               </div>
             </div>
 
            
             {activeAccordion === index && (
-              <div className="accordion-content" style={{ padding: '10px', backgroundColor: '#f7f7f7', borderRadius: '5px' }}>
+              <div className="accordion-content" style={{display: "block", height: "150px", padding: '10px', backgroundColor: '#f7f7f7', borderRadius: '5px', transition:'1s linear height' }}>
                 {ele.content}
               </div>
-            )}
+            )}{activeAccordion === index && (
+                <div
+                  className="accordion-content"
+                  style={{
+                    display: "block",
+                    maxHeight: "1500px", // Set this to a large value that accommodates all possible content.
+                    padding: "10px",
+                    backgroundColor: "#f7f7f7",
+                    borderRadius: "5px",
+                    overflow: "hidden", // Prevents content from overflowing
+                    transition: "max-height 1s linear", // Transitioning max-height
+                  }}
+                >
+                  {ele.content}
+                </div>
+              )}
+              
           </div>
         ))}
       </div>
